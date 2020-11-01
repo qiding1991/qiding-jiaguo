@@ -1,0 +1,27 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: qiding-jiaguo-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: qiding-jiaguo-user
+          uri: lb://qiding-jiaguo-user
+          predicates:
+            - Path=/user/**
+  zipkin:
+    sender:
+      type: web
+    base-url: http://qiding-jiaguo-zipkin/
+    service:
+      name: ${spring.application.name}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka.qiding.com:8001/eureka/
+  instance:
+    prefer-ip-address: true
+logging:
+  pattern:
+    console: "[@project.artifactId@] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %highlight{%-5p} => %cyan{%c.%M(%F:%L)} - %m%n"

@@ -1,0 +1,119 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------< com.qiding.jiaguo.zipkin:qiding-jiaguo-zipkin >------------
+[INFO] Building qiding-jiaguo-zipkin 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:3.1.2:tree (default-cli) @ qiding-jiaguo-zipkin ---
+[INFO] com.qiding.jiaguo.zipkin:qiding-jiaguo-zipkin:jar:0.0.1-SNAPSHOT
+[INFO] +- io.zipkin.java:zipkin-server:jar:2.12.9:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-log4j2:jar:2.3.5.RELEASE:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-slf4j-impl:jar:2.13.3:compile
+[INFO] |  |  |  \- org.apache.logging.log4j:log4j-api:jar:2.13.3:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-core:jar:2.13.3:compile
+[INFO] |  |  +- org.apache.logging.log4j:log4j-jul:jar:2.13.3:compile
+[INFO] |  |  \- org.slf4j:jul-to-slf4j:jar:1.7.30:compile
+[INFO] |  +- com.linecorp.armeria:armeria-spring-boot-autoconfigure:jar:0.83.0:compile
+[INFO] |  |  +- com.linecorp.armeria:armeria:jar:0.83.0:compile
+[INFO] |  |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.11.3:compile
+[INFO] |  |  |  +- com.fasterxml.jackson.core:jackson-core:jar:2.11.3:compile
+[INFO] |  |  |  +- io.netty:netty-codec-haproxy:jar:4.1.53.Final:compile
+[INFO] |  |  |  |  +- io.netty:netty-buffer:jar:4.1.53.Final:compile
+[INFO] |  |  |  |  \- io.netty:netty-codec:jar:4.1.53.Final:compile
+[INFO] |  |  |  +- io.netty:netty-codec-http2:jar:4.1.53.Final:compile
+[INFO] |  |  |  |  +- io.netty:netty-common:jar:4.1.53.Final:compile
+[INFO] |  |  |  |  +- io.netty:netty-handler:jar:4.1.53.Final:compile
+[INFO] |  |  |  |  \- io.netty:netty-codec-http:jar:4.1.53.Final:compile
+[INFO] |  |  |  +- io.netty:netty-resolver-dns:jar:4.1.53.Final:compile
+[INFO] |  |  |  |  +- io.netty:netty-resolver:jar:4.1.53.Final:compile
+[INFO] |  |  |  |  \- io.netty:netty-codec-dns:jar:4.1.53.Final:compile
+[INFO] |  |  |  +- io.netty:netty-tcnative-boringssl-static:jar:2.0.34.Final:compile
+[INFO] |  |  |  +- io.netty:netty-transport:jar:4.1.53.Final:compile
+[INFO] |  |  |  +- io.netty:netty-transport-native-epoll:jar:linux-x86_64:4.1.53.Final:compile
+[INFO] |  |  |  +- io.netty:netty-transport-native-unix-common:jar:4.1.53.Final:compile
+[INFO] |  |  |  \- org.reactivestreams:reactive-streams:jar:1.0.3:compile
+[INFO] |  |  +- com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[INFO] |  |  +- io.dropwizard.metrics:metrics-json:jar:4.1.14:compile
+[INFO] |  |  |  \- io.dropwizard.metrics:metrics-core:jar:4.1.14:compile
+[INFO] |  |  +- io.micrometer:micrometer-registry-prometheus:jar:1.5.6:compile
+[INFO] |  |  |  \- io.prometheus:simpleclient_common:jar:0.8.1:compile
+[INFO] |  |  |     \- io.prometheus:simpleclient:jar:0.8.1:compile
+[INFO] |  |  +- javax.inject:javax.inject:jar:1:compile
+[INFO] |  |  \- org.slf4j:slf4j-api:jar:1.7.30:compile
+[INFO] |  +- com.linecorp.armeria:armeria-spring-boot-actuator-starter:jar:0.83.0:compile
+[INFO] |  |  \- com.linecorp.armeria:armeria-spring-boot-actuator-autoconfigure:jar:0.83.0:compile
+[INFO] |  +- com.linecorp.armeria:armeria-zipkin:jar:0.83.0:compile
+[INFO] |  |  \- io.zipkin.brave:brave:jar:5.12.3:compile
+[INFO] |  |     \- io.zipkin.reporter2:zipkin-reporter-brave:jar:2.15.0:compile
+[INFO] |  |        \- io.zipkin.reporter2:zipkin-reporter:jar:2.15.0:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-actuator:jar:2.3.5.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-actuator-autoconfigure:jar:2.3.5.RELEASE:compile
+[INFO] |  |  |  \- org.springframework.boot:spring-boot-actuator:jar:2.3.5.RELEASE:compile
+[INFO] |  |  \- io.micrometer:micrometer-core:jar:1.5.6:compile
+[INFO] |  |     +- org.hdrhistogram:HdrHistogram:jar:2.1.12:compile
+[INFO] |  |     \- org.latencyutils:LatencyUtils:jar:2.0.3:runtime
+[INFO] |  +- io.zipkin.zipkin2:zipkin:jar:2.21.1:compile
+[INFO] |  +- io.zipkin.zipkin2:zipkin-collector:jar:2.12.9:compile
+[INFO] |  \- io.zipkin.java:zipkin-autoconfigure-metrics-prometheus:jar:2.12.9:compile
+[INFO] +- io.zipkin.java:zipkin-autoconfigure-ui:jar:2.12.9:compile
+[INFO] |  +- javax.servlet:javax.servlet-api:jar:4.0.1:compile
+[INFO] |  +- io.zipkin.java:zipkin-ui:jar:2.12.9:compile
+[INFO] |  +- io.zipkin.zipkin2:zipkin-lens:jar:2.12.9:compile
+[INFO] |  +- org.jsoup:jsoup:jar:1.11.3:compile
+[INFO] |  \- org.springframework.boot:spring-boot-autoconfigure:jar:2.3.5.RELEASE:compile
+[INFO] |     \- org.springframework.boot:spring-boot:jar:2.3.5.RELEASE:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-web:jar:2.3.5.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:2.3.5.RELEASE:compile
+[INFO] |  |  +- jakarta.annotation:jakarta.annotation-api:jar:1.3.5:compile
+[INFO] |  |  \- org.yaml:snakeyaml:jar:1.26:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-json:jar:2.3.5.RELEASE:compile
+[INFO] |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.11.3:compile
+[INFO] |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.11.3:compile
+[INFO] |  |  +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.11.3:compile
+[INFO] |  |  \- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.11.3:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter-tomcat:jar:2.3.5.RELEASE:compile
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:9.0.39:compile
+[INFO] |  |  +- org.glassfish:jakarta.el:jar:3.0.3:compile
+[INFO] |  |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:9.0.39:compile
+[INFO] |  +- org.springframework:spring-web:jar:5.2.10.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-beans:jar:5.2.10.RELEASE:compile
+[INFO] |  \- org.springframework:spring-webmvc:jar:5.2.10.RELEASE:compile
+[INFO] |     +- org.springframework:spring-aop:jar:5.2.10.RELEASE:compile
+[INFO] |     +- org.springframework:spring-context:jar:5.2.10.RELEASE:compile
+[INFO] |     \- org.springframework:spring-expression:jar:5.2.10.RELEASE:compile
+[INFO] \- org.springframework.boot:spring-boot-starter-test:jar:2.3.5.RELEASE:test
+[INFO]    +- org.springframework.boot:spring-boot-test:jar:2.3.5.RELEASE:test
+[INFO]    +- org.springframework.boot:spring-boot-test-autoconfigure:jar:2.3.5.RELEASE:test
+[INFO]    +- com.jayway.jsonpath:json-path:jar:2.4.0:test
+[INFO]    |  \- net.minidev:json-smart:jar:2.3:test
+[INFO]    |     \- net.minidev:accessors-smart:jar:1.2:test
+[INFO]    |        \- org.ow2.asm:asm:jar:5.0.4:test
+[INFO]    +- jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3:test
+[INFO]    |  \- jakarta.activation:jakarta.activation-api:jar:1.2.2:test
+[INFO]    +- org.assertj:assertj-core:jar:3.16.1:test
+[INFO]    +- org.hamcrest:hamcrest:jar:2.2:test
+[INFO]    +- org.junit.jupiter:junit-jupiter:jar:5.6.3:test
+[INFO]    |  +- org.junit.jupiter:junit-jupiter-api:jar:5.6.3:test
+[INFO]    |  |  +- org.apiguardian:apiguardian-api:jar:1.1.0:test
+[INFO]    |  |  +- org.opentest4j:opentest4j:jar:1.2.0:test
+[INFO]    |  |  \- org.junit.platform:junit-platform-commons:jar:1.6.3:test
+[INFO]    |  +- org.junit.jupiter:junit-jupiter-params:jar:5.6.3:test
+[INFO]    |  \- org.junit.jupiter:junit-jupiter-engine:jar:5.6.3:test
+[INFO]    |     \- org.junit.platform:junit-platform-engine:jar:1.6.3:test
+[INFO]    +- org.mockito:mockito-core:jar:3.3.3:test
+[INFO]    |  +- net.bytebuddy:byte-buddy:jar:1.10.17:test
+[INFO]    |  +- net.bytebuddy:byte-buddy-agent:jar:1.10.17:test
+[INFO]    |  \- org.objenesis:objenesis:jar:2.6:test
+[INFO]    +- org.mockito:mockito-junit-jupiter:jar:3.3.3:test
+[INFO]    +- org.skyscreamer:jsonassert:jar:1.5.0:test
+[INFO]    |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:test
+[INFO]    +- org.springframework:spring-core:jar:5.2.10.RELEASE:compile
+[INFO]    |  \- org.springframework:spring-jcl:jar:5.2.10.RELEASE:compile
+[INFO]    +- org.springframework:spring-test:jar:5.2.10.RELEASE:test
+[INFO]    \- org.xmlunit:xmlunit-core:jar:2.7.0:test
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.948 s
+[INFO] Finished at: 2020-10-31T16:38:52+08:00
+[INFO] ------------------------------------------------------------------------

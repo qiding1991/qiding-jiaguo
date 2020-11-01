@@ -1,0 +1,12 @@
+server:
+  port: 8001
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+spring:
+  application:
+    name: qiding-jiagou-eureka
+logging:
+  pattern:
+    console: "[@project.artifactId@] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %highlight{%-5p} => %cyan{%c.%M(%F:%L)} - %m%n"

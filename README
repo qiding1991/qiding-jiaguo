@@ -1,0 +1,7 @@
+1.采用微服务的架构
+
+   qiding-jiaguo-eureka 服务注册中心 8001
+   qiding-jiaguo-gateway 服务网关 8002
+   qiding-jiaguo-zipkin 链路追踪 8003
+   qiding-jiaguo-user 用户服务 9001
+   qiding-jiaguo-cache 缓存服务 9002

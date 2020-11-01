@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: qiding-jiaguo-cache
+##zipkin配置
+  zipkin:
+    service:
+      name: ${spring.application.name}
+    base-url: http://qiding-jiaguo-zipkin/
+    sender:
+      type: web
+##redis配置
+  redis:
+    host: redis.qiding.com
+    port: 6379
+server:
+  port: 9002
+#eureka配置
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://eureka.qiding.com:8001/eureka/
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+
+logging:
+  pattern:
+    console: "[@project.artifactId@] %clr([%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow} %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %highlight{%-5p} => %cyan{%c.%M(%F:%L)} - %m%n"
+

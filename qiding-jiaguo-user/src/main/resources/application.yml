@@ -1,0 +1,41 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /user
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka.qiding.com:8001/eureka/
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: qiding-jiaguo-user
+  data:
+    mongodb:
+      uri: mongodb://mongodb.qiding.com:27017/qiding-jiaguo
+  zipkin:
+    base-url: http://qiding-jiaguo-zipkin/
+    sender:
+      type: web
+    service:
+      name: ${spring.application.name}
+  mail:
+    username: qiding_email_test@126.com
+    password: LYIIYWWGIRANQIWT
+    host: smtp.126.com
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,beans
+logging:
+  pattern:
+    console: "[@project.artifactId@] %clr([%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow} %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %highlight{%-5p} => %cyan{%c.%M(%F:%L)} - %m%n"
+
+mail:
+  content:
+    email-template: "your are welcome, %s activeCode is %s"
+    active-code-length: 6

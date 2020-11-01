@@ -1,0 +1,18 @@
+server:
+  port: 8003
+logging:
+  pattern:
+    console: "[@project.artifactId@] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %highlight{%-5p} => %cyan{%c.%M(%F:%L)} - %m%n"
+armeria:
+  ports:
+          - port: ${server.port}
+spring:
+  application:
+    name: qiding-jiaguo-zipkin
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+       defaultZone: http://eureka.qiding.com:8001/eureka/
+  instance:
+    prefer-ip-address: true
