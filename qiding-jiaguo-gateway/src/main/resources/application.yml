@@ -7,7 +7,7 @@ spring:
     gateway:
       routes:
         - id: qiding-jiaguo-user
-          uri: lb://qiding-jiaguo-user
+          uri: lb://qiding-jiaguo-user/
           predicates:
             - Path=/user/**
   zipkin:
