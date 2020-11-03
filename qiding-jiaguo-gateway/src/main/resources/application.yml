@@ -20,6 +20,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka.qiding.com:8001/eureka/
+    fetch-registry: true
+    register-with-eureka: true
   instance:
     prefer-ip-address: true
 logging:
