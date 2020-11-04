@@ -58,7 +58,7 @@
 
         <dependency>
             <groupId>com.google.guava</groupId>
-            <artifactId>guava-bom</artifactId>
+            <artifactId>guava</artifactId>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
