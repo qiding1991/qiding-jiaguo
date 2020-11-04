@@ -10,6 +10,9 @@ public class SendEmailUtil {
     public static Boolean sendEmail(JMailConfig jmailConfig, JMailData jMailData)  throws EmailException {
 		HtmlEmail email=new HtmlEmail();//创建电子邮件对象
 		email.setDebug(true);
+		email.setSSLCheckServerIdentity(true);
+		email.setSmtpPort(465);
+		email.setSSLOnConnect(true);
 		email.setHostName(jmailConfig.getHost());//设置发送电子邮件使用的服务器主机名
 		email.setAuthenticator(new DefaultAuthenticator(jmailConfig.getUserName(), jmailConfig.getPassword()));//邮件服务器身份验证
 		email.setFrom(jmailConfig.getUserName());//设置发信人邮箱
