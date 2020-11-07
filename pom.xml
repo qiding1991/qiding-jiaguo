@@ -34,6 +34,7 @@
         <module>qiding-jiaguo-gateway</module>
         <module>qiding-jiaguo-user</module>
         <module>qiding-jiaguo-zipkin</module>
+        <module>qiding-jiaguo-cache</module>
         <module>qiding-jiaguo-common</module>
     </modules>
 

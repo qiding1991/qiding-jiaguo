@@ -4,9 +4,12 @@ eureka:
   client:
     fetch-registry: false
     register-with-eureka: false
+    service-url:
+       defaultZone:  http://eureka.qiding.com:8001/eureka/
 spring:
   application:
     name: qiding-jiagou-eureka
 logging:
   pattern:
-    console: "[@project.artifactId@] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %highlight{%-5p} => %cyan{%c.%M(%F:%L)} - %m%n"
+     console: "[@project.artifactId@] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%p] => %C.%M\\(%F:%L\\) - %m%n"
+

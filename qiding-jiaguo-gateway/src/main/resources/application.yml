@@ -26,4 +26,4 @@ eureka:
     prefer-ip-address: true
 logging:
   pattern:
-    console: "[@project.artifactId@] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %highlight{%-5p} => %cyan{%c.%M(%F:%L)} - %m%n"
+    console: "[@project.artifactId@] %clr([%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow} %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%p] => %C.%M\\(%F:%L\\) - %m%n"
