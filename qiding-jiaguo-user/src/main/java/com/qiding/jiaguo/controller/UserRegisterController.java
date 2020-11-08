@@ -8,12 +8,14 @@ import com.qiding.jiaguo.controller.result.UserToken;
 import com.qiding.jiaguo.entity.UserInfo;
 import com.qiding.jiaguo.service.TokenService;
 import com.qiding.jiaguo.service.UserRegisterService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import static com.qiding.jiaguo.constant.ErrorCode.PASSWORD_USE_NAME_ERROR;
-
+@Api(tags = "用户注册")
 @Log4j2
 @RestController
 public class UserRegisterController extends BaseController {
@@ -26,6 +28,8 @@ public class UserRegisterController extends BaseController {
         this.tokenService = tokenService;
     }
 
+
+    @ApiOperation("注册用户")
     @PostMapping("register")
     public CommonResponse registerUser(
             @RequestHeader("userEmail") String userEmail,
@@ -37,6 +41,8 @@ public class UserRegisterController extends BaseController {
         return success(userToken);
     }
 
+
+    @ApiOperation("用户信息更新")
     @PostMapping("update")
     public CommonResponse updateUser(
             @RequestHeader("userId") String userId,
@@ -48,6 +54,7 @@ public class UserRegisterController extends BaseController {
         return success();
     }
 
+    @ApiOperation("邮箱密码登录")
     @PostMapping("userLogin")
     public CommonResponse userLogin(@RequestBody LoginParam loginParam) {
         UserInfo userInfo = registerService.findByEmail(loginParam.getUserEmail());
@@ -59,6 +66,7 @@ public class UserRegisterController extends BaseController {
     }
 
 
+    @ApiOperation("用户详情")
     @GetMapping("userDetail")
     public CommonResponse userDetail(
             @RequestHeader("userId") String userId,

@@ -39,6 +39,7 @@
         <module>qiding-jiaguo-zipkin</module>
         <module>qiding-jiaguo-cache</module>
         <module>qiding-jiaguo-common</module>
+        <module>qiding-jiaguo-news</module>
     </modules>
 
 
