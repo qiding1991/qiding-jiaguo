@@ -10,6 +10,7 @@ import com.qiding.jiaguo.service.TokenService;
 import com.qiding.jiaguo.service.UserRegisterService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import static com.qiding.jiaguo.constant.ErrorCode.PASSWORD_USE_NAME_ERROR;
 

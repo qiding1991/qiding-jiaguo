@@ -7,7 +7,7 @@
         <artifactId>qiding-jiaguo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.qiding.jiaguo.eureka</groupId>
+
     <artifactId>qiding-jiaguo-eureka</artifactId>
     <name>qiding-jiaguo-eureka</name>
     <description>服务注册中心</description>

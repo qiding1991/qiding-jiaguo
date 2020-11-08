@@ -1,20 +1,20 @@
 server:
-  port: 9001
+  port: 9003
 eureka:
   client:
     register-with-eureka: true
     service-url:
       defaultZone: http://eureka.qiding.com:8001/eureka/
     fetch-registry: true
-    registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true
 spring:
   application:
-    name: qiding-jiaguo-user
+    name: qiding-jiaguo-file
   data:
     mongodb:
       uri: mongodb://mongodb.qiding.com:27017/qiding-jiaguo
+      grid-fs-database: qiding-jiaguo-fs
   zipkin:
     base-url: http://qiding-jiaguo-zipkin/
     sender:

@@ -7,7 +7,7 @@
         <artifactId>qiding-jiaguo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.qiding.jiaguo.user</groupId>
+    <groupId>com.qiding.jiaguo</groupId>
     <artifactId>qiding-jiaguo-user</artifactId>
     <name>qiding-jiaguo-user</name>
     <description>用户服务</description>
@@ -16,7 +16,7 @@
 
 
         <dependency>
-            <groupId>com.qiding.jiaguo.common</groupId>
+            <groupId>com.qiding.jiaguo</groupId>
             <artifactId>qiding-jiaguo-common</artifactId>
         </dependency>
 
@@ -50,6 +50,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
 
         <dependency>

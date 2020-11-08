@@ -10,6 +10,11 @@ spring:
           uri: lb://qiding-jiaguo-user/
           predicates:
             - Path=/user/**
+        - id: qiding-jiaguo-file
+          uri: lb://qiding-jiaguo-file/
+          predicates:
+            - Path=/file/**
+
   zipkin:
     sender:
       type: web

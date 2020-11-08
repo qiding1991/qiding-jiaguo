@@ -7,7 +7,7 @@
         <artifactId>qiding-jiaguo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.qiding.jiaguo.common</groupId>
+
     <artifactId>qiding-jiaguo-common</artifactId>
     <name>qiding-jiaguo-common</name>
     <description>工作组件</description>
@@ -18,10 +18,22 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

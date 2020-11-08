@@ -5,3 +5,4 @@
    qiding-jiaguo-zipkin 链路追踪 8003
    qiding-jiaguo-user 用户服务 9001
    qiding-jiaguo-cache 缓存服务 9002
+   qiding-jiaguo-file 文件存储 9003

@@ -7,23 +7,28 @@
 		<artifactId>qiding-jiaguo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>qiding-jiaguo-cache</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>qiding-jiaguo-cache</name>
-	<description>Demo project for Spring Boot</description>
+	<groupId>com.qiding.jiaguo</groupId>
+	<artifactId>qiding-jiaguo-file</artifactId>
+	<name>qiding-jiaguo-file</name>
+	<description>文件相关服务</description>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
 
@@ -31,17 +36,6 @@
 			<groupId>com.qiding.jiaguo</groupId>
 			<artifactId>qiding-jiaguo-common</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
@@ -52,8 +46,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
 		</dependency>
 
 		<dependency>
@@ -61,7 +55,6 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -72,7 +65,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 
 </project>
