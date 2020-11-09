@@ -1,9 +1,10 @@
 package com.qiding.jiaguo.news;
 
 public enum NewType {
-
-    Special_Column(2, "专栏"),
-    int_news(1, "国际信息");
+    RECOMMEND_NEW(4,"推荐"),
+    AD_NEW(3, "广告"),
+    SPECIAL_COLUMN(2, "专栏"),
+    INT_NEWS(1, "国际信息");
     private int code;
     private String name;
 

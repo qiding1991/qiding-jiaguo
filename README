@@ -6,3 +6,4 @@
    qiding-jiaguo-user 用户服务 9001
    qiding-jiaguo-cache 缓存服务 9002
    qiding-jiaguo-file 文件存储 9003
+   qiding-jiaguo-new 新闻 9004

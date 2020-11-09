@@ -17,6 +17,9 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.qiding.jiaguo.news.NewType.AD_NEW;
+import static com.qiding.jiaguo.news.NewType.RECOMMEND_NEW;
+
 @Api(tags = "热门,国际信息，地区新闻")
 @RestController
 public class NewController extends BaseController {
@@ -30,35 +33,37 @@ public class NewController extends BaseController {
         //推荐
         PageNews pageNews = PageNews.builder()
                 .url("http://www.baidu.com")
-                .contentType(NewContentTypes.TextAndLink.getCode())
+                .newType(RECOMMEND_NEW.getCode())
+                .newId(1L)
+                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
                 .content(new TextAndLink("头条的-发大水了"))
                 .build();
         recommendNew.add(pageNews);
         PageNews pageNews2 = PageNews.builder()
                 .url("http://www.baidu.com")
-                .contentType(NewContentTypes.TextAndLink.getCode())
+                .newType(RECOMMEND_NEW.getCode())
+                .newId(2L)
+                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
                 .content(new TextAndLink("头条的-发大水了"))
                 .build();
-
         recommendNew.add(pageNews2);
 
 
         List<PageNews> newsList = new ArrayList<>();
-
         //大图片 布局
         PicAndTitle bigPicAndTitle = PicAndTitle.builder()
                 .pic("https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg")
-                .title("大图片")
+                .title("大图片,图片占一行")
                 .publishTime(Instant.now().toEpochMilli())
                 .subTitle("国际新闻")
                 .readCount(10)
                 .build();
         newsList.add(PageNews.builder()
                 .url("http://www.baidu.com")
-                .contentType(NewContentTypes.BigPicAndTitle.getCode())
+                .newType(NewType.INT_NEWS.getCode())
+                .newId(1L)
+                .contentType(NewContentTypes.BIG_PIC_AND_TITLE.getCode())
                 .content(bigPicAndTitle)
-                .newType(NewType.int_news.getCode())
-                .newId(11111L)
                 .build());
 
         //正常布局
@@ -71,10 +76,10 @@ public class NewController extends BaseController {
                 .build();
         newsList.add(PageNews.builder()
                 .url("http://www.baidu.com")
-                .contentType(NewContentTypes.PicAndTitle.getCode())
+                .contentType(NewContentTypes.PIC_AND_TITLE.getCode())
                 .content(bigPicAndTitle)
-                .newId(2222L)
-                .newType(NewType.int_news.getCode())
+                .newId(2L)
+                .newType(NewType.INT_NEWS.getCode())
                 .build());
 
 
@@ -85,8 +90,10 @@ public class NewController extends BaseController {
                 .build();
         newsList.add(PageNews.builder()
                 .url("http://www.baidu.com")
-                .contentType(NewContentTypes.AdWithNoTitle.getCode())
+                .contentType(NewContentTypes.AD_WITH_NO_TITLE.getCode())
                 .content(adWithNoTitle)
+                .newType(AD_NEW.getCode())
+                .newId(1L)
                 .build());
 
         //广告
@@ -94,11 +101,12 @@ public class NewController extends BaseController {
                 .subtitle("推广")
                 .title("xxxxxxxxxxxxxxx")
                 .build();
-
         newsList.add(PageNews.builder()
                 .url("http://www.baidu.com")
-                .contentType(NewContentTypes.AdWithTitle.getCode())
+                .contentType(NewContentTypes.AD_WITH_TITLE.getCode())
                 .content(adWithTitle)
+                .newType(AD_NEW.getCode())
+                .newId(2L)
                 .build());
 
         //专栏-文档
@@ -113,10 +121,10 @@ public class NewController extends BaseController {
         newsList.add(
                 PageNews.builder()
                         .url("http://www.baidu.com")
-                        .contentType(NewContentTypes.SpecialColumnText.getCode())
+                        .contentType(NewContentTypes.SPECIAL_COLUMN_TEXT.getCode())
                         .content(specialColumnText)
-                        .newType(NewType.Special_Column.getCode())
-                        .newId(333L)
+                        .newType(NewType.SPECIAL_COLUMN.getCode())
+                        .newId(1L)
                         .build());
 
         //专栏视频
@@ -134,12 +142,11 @@ public class NewController extends BaseController {
         newsList.add(
                 PageNews.builder()
                         .url("http://www.baidu.com")
-                        .contentType(NewContentTypes.SpecialColumnText.getCode())
+                        .contentType(NewContentTypes.SPECIAL_COLUMN_VIDEO.getCode())
                         .content(specialColumnVideo)
-                        .newType(NewType.Special_Column.getCode())
-                        .newId(333L)
+                        .newType(NewType.SPECIAL_COLUMN.getCode())
+                        .newId(2L)
                         .build());
-
 
         pageDetail.setHasMore(Boolean.TRUE);
         pageDetail.setNewsList(newsList);

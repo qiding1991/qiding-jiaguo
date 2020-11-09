@@ -1,0 +1,29 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: qiding-jiaguo-news
+  ##系统监控
+  zipkin:
+    base-url: http://qiding-jiaguo-zipkin/
+    sender:
+      type: web
+    service:
+      name: ${spring.application.name}
+  ##mongdb
+  data:
+    mongodb:
+      uri: mongodb://mongodb.qiding.com:27017/qiding-jiaguo
+#服务注册
+eureka:
+  client:
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://eureka.qiding.com:8001/eureka/
+  instance:
+    prefer-ip-address: true
+#日志
+logging:
+  pattern:
+    console: "[@project.artifactId@] %clr([%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow} %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] [%p] => %C.%M\\(%F:%L\\) - %m%n"
