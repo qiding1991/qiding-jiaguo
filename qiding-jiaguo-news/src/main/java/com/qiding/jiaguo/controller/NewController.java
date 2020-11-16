@@ -24,10 +24,10 @@ import static com.qiding.jiaguo.news.NewType.RECOMMEND_NEW;
 @RestController
 public class NewController extends BaseController {
 
-    @GetMapping("new/hot")
+    @GetMapping("new/list")
     public CommonResponse<NewPageDetail> hotNew(@RequestParam(value = "size") Integer size,
+                                                @RequestParam(value = "newType") Integer newType,
                                                 @RequestParam(value = "offset") Integer offset) {
-
         NewPageDetail pageDetail = new NewPageDetail();
         List<PageNews> recommendNew = new ArrayList<>();
         //推荐
@@ -154,14 +154,5 @@ public class NewController extends BaseController {
         return success(pageDetail);
 
     }
-
-    @GetMapping("new/area")
-    public CommonResponse<NewPageDetail> areaNew(@RequestParam(value = "area") String areaType,
-                                                 @RequestParam(value = "size") Integer size,
-                                                 @RequestParam(value = "offset") Integer offset) {
-
-        return hotNew(size, offset);
-    }
-
 
 }
