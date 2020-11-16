@@ -167,7 +167,6 @@ public class NewController extends BaseController {
 
         pageDetail.setHasMore(Boolean.TRUE);
         pageDetail.setNewsList(newsList);
-        pageDetail.setRecommendNew(recommendNew);
         return success(pageDetail);
 
     }
