@@ -15,5 +15,5 @@ import lombok.Data;
 public class GroupRecommend implements NewContent {
     private String icon;
     private String name;
-    private List<NewContent> content;
+    private List<NewContent> content2;
 }

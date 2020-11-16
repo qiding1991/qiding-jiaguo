@@ -61,7 +61,7 @@ public class NewController extends BaseController {
         GroupRecommend recommend=new GroupRecommend();
         recommend.setName("头条XXXXX新闻");
         recommend.setIcon("https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg");
-        recommend.setContent(Arrays.asList(new TextAndLink("头条的-发大水了1",1L),new TextAndLink("头条的-发大水了1",2L),new TextAndLink("头条的-发大水了1",3L)));
+        recommend.setContent2(Arrays.asList(new TextAndLink("头条的-发大水了1",1L),new TextAndLink("头条的-发大水了1",2L),new TextAndLink("头条的-发大水了1",3L)));
         PageNews recommendGroup = PageNews.builder()
                 .contentType(NewContentTypes.RECOMMEND_GROUP.getCode())
                 .content(recommend)
