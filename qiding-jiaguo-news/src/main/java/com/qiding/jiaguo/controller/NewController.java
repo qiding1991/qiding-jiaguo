@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.qiding.jiaguo.news.NewType.AD_NEW;
@@ -34,34 +35,33 @@ public class NewController extends BaseController {
         List<PageNews> newsList = new ArrayList<>();
         List<PageNews> recommendNew = new ArrayList<>();
         //推荐
-        PageNews pageNews = PageNews.builder()
-//                .url("http://www.baidu.com")
-                .newId(1L)
-//                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
-                .content(new TextAndLink("头条的-发大水了1"))
-                .build();
-        recommendNew.add(pageNews);
-        PageNews pageNews2 = PageNews.builder()
-//                .url("http://www.baidu.com")
-                .newId(2L)
-//                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
-                .content(new TextAndLink("头条的-发大水了2"))
-                .build();
-        recommendNew.add(pageNews2);
-        PageNews pageNews3 = PageNews.builder()
-//                .url("http://www.baidu.com")
-                .newId(3L)
-//                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
-                .content(new TextAndLink("头条的-发大水了3"))
-                .build();
-        recommendNew.add(pageNews3);
+//        PageNews pageNews = PageNews.builder()
+////                .url("http://www.baidu.com")
+////                .newId(1L)
+////                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
+//                .content(new TextAndLink("头条的-发大水了1",1L))
+//                .build();
+//        recommendNew.add(pageNews);
+//        PageNews pageNews2 = PageNews.builder()
+////                .url("http://www.baidu.com")
+////                .newId(2L)
+////                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
+//                .content(new TextAndLink("头条的-发大水了2",2L))
+//                .build();
+//        recommendNew.add(pageNews2);
+//        PageNews pageNews3 = PageNews.builder()
+////                .url("http://www.baidu.com")
+////                .newId(3L)
+////                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
+//                .content(new TextAndLink("头条的-发大水了3",3L))
+//                .build();
+//        recommendNew.add(pageNews3);
 
         //推荐
         GroupRecommend recommend=new GroupRecommend();
-        recommend.setGroupName("头条XXXXX新闻");
-        recommend.setRecommendIcon("https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg");
-        recommend.setTextContent(recommendNew);
-
+        recommend.setName("头条XXXXX新闻");
+        recommend.setIcon("https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg");
+        recommend.setContent(Arrays.asList(new TextAndLink("头条的-发大水了1",1L),new TextAndLink("头条的-发大水了1",2L),new TextAndLink("头条的-发大水了1",3L)));
         PageNews recommendGroup = PageNews.builder()
                 .contentType(NewContentTypes.RECOMMEND_GROUP.getCode())
                 .content(recommend)

@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 public class GroupRecommend implements NewContent {
-    private String recommendIcon;
-    private String groupName;
-    private List<PageNews> textContent;
+    private String icon;
+    private String name;
+    private List<NewContent> content;
 }
