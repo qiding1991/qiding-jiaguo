@@ -18,38 +18,56 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.qiding.jiaguo.news.NewType.AD_NEW;
-import static com.qiding.jiaguo.news.NewType.RECOMMEND_NEW;
 
 @Api(tags = "热门,国际信息，地区新闻")
 @RestController
 public class NewController extends BaseController {
 
-    @GetMapping("new/hot")
+    @GetMapping("new/info")
     public CommonResponse<NewPageDetail> hotNew(@RequestParam(value = "size") Integer size,
+                                                @RequestParam(value = "newId",required = false) Long newId,
                                                 @RequestParam(value = "offset") Integer offset) {
 
         NewPageDetail pageDetail = new NewPageDetail();
-        List<PageNews> recommendNew = new ArrayList<>();
-        //推荐
-        PageNews pageNews = PageNews.builder()
-                .url("http://www.baidu.com")
-                .newType(RECOMMEND_NEW.getCode())
-                .newId(1L)
-                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
-                .content(new TextAndLink("头条的-发大水了"))
-                .build();
-        recommendNew.add(pageNews);
-        PageNews pageNews2 = PageNews.builder()
-                .url("http://www.baidu.com")
-                .newType(RECOMMEND_NEW.getCode())
-                .newId(2L)
-                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
-                .content(new TextAndLink("头条的-发大水了"))
-                .build();
-        recommendNew.add(pageNews2);
 
 
         List<PageNews> newsList = new ArrayList<>();
+        List<PageNews> recommendNew = new ArrayList<>();
+        //推荐
+        PageNews pageNews = PageNews.builder()
+//                .url("http://www.baidu.com")
+                .newId(1L)
+//                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
+                .content(new TextAndLink("头条的-发大水了1"))
+                .build();
+        recommendNew.add(pageNews);
+        PageNews pageNews2 = PageNews.builder()
+//                .url("http://www.baidu.com")
+                .newId(2L)
+//                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
+                .content(new TextAndLink("头条的-发大水了2"))
+                .build();
+        recommendNew.add(pageNews2);
+        PageNews pageNews3 = PageNews.builder()
+//                .url("http://www.baidu.com")
+                .newId(3L)
+//                .contentType(NewContentTypes.TEXT_AND_LINK.getCode())
+                .content(new TextAndLink("头条的-发大水了3"))
+                .build();
+        recommendNew.add(pageNews3);
+
+        //推荐
+        GroupRecommend recommend=new GroupRecommend();
+        recommend.setGroupName("头条XXXXX新闻");
+        recommend.setRecommendIcon("https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg");
+        recommend.setTextContent(recommendNew);
+
+        PageNews recommendGroup = PageNews.builder()
+                .contentType(NewContentTypes.RECOMMEND_GROUP.getCode())
+                .content(recommend)
+                .build();
+
+        newsList.add(recommendGroup);
         //大图片 布局
         PicAndTitle bigPicAndTitle = PicAndTitle.builder()
                 .pic("https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg")
@@ -60,7 +78,6 @@ public class NewController extends BaseController {
                 .build();
         newsList.add(PageNews.builder()
                 .url("http://www.baidu.com")
-                .newType(NewType.INT_NEWS.getCode())
                 .newId(1L)
                 .contentType(NewContentTypes.BIG_PIC_AND_TITLE.getCode())
                 .content(bigPicAndTitle)
@@ -79,7 +96,7 @@ public class NewController extends BaseController {
                 .contentType(NewContentTypes.PIC_AND_TITLE.getCode())
                 .content(bigPicAndTitle)
                 .newId(2L)
-                .newType(NewType.INT_NEWS.getCode())
+
                 .build());
 
 
@@ -92,7 +109,7 @@ public class NewController extends BaseController {
                 .url("http://www.baidu.com")
                 .contentType(NewContentTypes.AD_WITH_NO_TITLE.getCode())
                 .content(adWithNoTitle)
-                .newType(AD_NEW.getCode())
+
                 .newId(1L)
                 .build());
 
@@ -105,7 +122,7 @@ public class NewController extends BaseController {
                 .url("http://www.baidu.com")
                 .contentType(NewContentTypes.AD_WITH_TITLE.getCode())
                 .content(adWithTitle)
-                .newType(AD_NEW.getCode())
+
                 .newId(2L)
                 .build());
 
@@ -123,7 +140,7 @@ public class NewController extends BaseController {
                         .url("http://www.baidu.com")
                         .contentType(NewContentTypes.SPECIAL_COLUMN_TEXT.getCode())
                         .content(specialColumnText)
-                        .newType(NewType.SPECIAL_COLUMN.getCode())
+
                         .newId(1L)
                         .build());
 
@@ -144,7 +161,7 @@ public class NewController extends BaseController {
                         .url("http://www.baidu.com")
                         .contentType(NewContentTypes.SPECIAL_COLUMN_VIDEO.getCode())
                         .content(specialColumnVideo)
-                        .newType(NewType.SPECIAL_COLUMN.getCode())
+
                         .newId(2L)
                         .build());
 
@@ -154,14 +171,4 @@ public class NewController extends BaseController {
         return success(pageDetail);
 
     }
-
-    @GetMapping("new/area")
-    public CommonResponse<NewPageDetail> areaNew(@RequestParam(value = "area") String areaType,
-                                                 @RequestParam(value = "size") Integer size,
-                                                 @RequestParam(value = "offset") Integer offset) {
-
-        return hotNew(size, offset);
-    }
-
-
 }
