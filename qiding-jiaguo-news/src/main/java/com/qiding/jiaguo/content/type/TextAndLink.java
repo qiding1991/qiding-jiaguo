@@ -9,8 +9,10 @@ import lombok.Data;
 @Data
 public class TextAndLink implements NewContent {
     private String text;
+    private Long id;
 
-    public TextAndLink(String text) {
+    public TextAndLink(String text, Long id) {
         this.text = text;
+        this.id = id;
     }
 }

@@ -14,6 +14,5 @@ public class PageNews {
     private Integer contentType;
     private NewContent content;
     private String url;
-    private Integer newType;
     private Long newId;
 }

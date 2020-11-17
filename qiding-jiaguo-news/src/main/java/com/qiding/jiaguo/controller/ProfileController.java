@@ -5,6 +5,7 @@ import com.qiding.jiaguo.constant.CommonResponse;
 import com.qiding.jiaguo.controller.response.ArticleInfo;
 import com.qiding.jiaguo.controller.response.AuthorGroup;
 import com.qiding.jiaguo.controller.response.AuthorProfile;
+import com.qiding.jiaguo.controller.response.VideoInfo;
 import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
@@ -69,21 +70,34 @@ public class ProfileController extends BaseController {
                                  @RequestParam(value = "limit") Long limit) {
 
         List<ArticleInfo> infoList = new ArrayList<>();
-        infoList.add(new ArticleInfo("吃喝", "http://www.baiducom/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
-        infoList.add(new ArticleInfo("玩", "http://www.baidu.com/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
-        infoList.add(new ArticleInfo("乐", "http://www.baidu.com/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
-        infoList.add(new ArticleInfo("户外", "http://www.baidu.com/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
-        infoList.add(new ArticleInfo("野游", "http://www.baidu.com/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
+        infoList.add(new ArticleInfo(1,"吃喝", "http://www.baiducom/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
+        infoList.add(new ArticleInfo(2,"玩", "http://www.baidu.com/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
+        infoList.add(new ArticleInfo(3,"乐", "http://www.baidu.com/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
+        infoList.add(new ArticleInfo(4,"户外", "http://www.baidu.com/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
+        infoList.add(new ArticleInfo(5,"野游", "http://www.baidu.com/", "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg", Instant.now().toEpochMilli(), 1010));
         return success(ImmutableMap.of("article", infoList, "hasMore", true));
     }
 
     @GetMapping("author/video/list")
     public CommonResponse videoList(@RequestParam(value = "authorId") Long authorId,
                                  @RequestParam(value = "offset") Long offset,
-                                 @RequestParam(value = "limit") Long limit,
-                                 @RequestParam(value = "articleType") Integer article) {
+                                 @RequestParam(value = "limit") Long limit) {
 
+        List<VideoInfo> infoList = new ArrayList<>();
 
+        infoList.add(new VideoInfo(1L,"大标题","http://www.baiducom/",
+                "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg",
+                "http://www.baiducom/",Instant.now().toEpochMilli(), 10,100));
+        infoList.add(new VideoInfo(2L,"大标题","http://www.baiducom/",
+                "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg",
+                "http://www.baiducom/",Instant.now().toEpochMilli(), 10,100));
+        infoList.add(new VideoInfo(3L,"大标题","http://www.baiducom/",
+                "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg",
+                "http://www.baiducom/",Instant.now().toEpochMilli(), 10,100));
+        infoList.add(new VideoInfo(4L,"大标题","http://www.baiducom/",
+                "https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2551094610,271931118&fm=26&gp=0.jpg",
+                "http://www.baiducom/",Instant.now().toEpochMilli(), 10,100));
+        return success(ImmutableMap.of("article", infoList, "hasMore", true));
     }
 
 }
