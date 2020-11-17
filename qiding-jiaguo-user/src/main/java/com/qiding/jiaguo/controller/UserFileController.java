@@ -31,7 +31,8 @@ public class UserFileController extends BaseController {
     @PostMapping("photo/upload")
     public CommonResponse<String> fileUpload(@RequestParam("file") MultipartFile file) throws IOException {
         CommonResponse<String> response  = fileService.uploadFile(new FileDocument(file));
-        return success(response.getData());
+        String downLoadUrl="http://47.94.33.237:9001/photo/down?fileId="+response.getData();
+        return success(downLoadUrl);
     }
 
     @ApiOperation("下载图片")

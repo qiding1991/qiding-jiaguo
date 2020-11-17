@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
-@Api(tags = "热门,国际信息，地区新闻")
+@Api(tags = "新闻分类列表")
 @RestController
 public class NewTypeController extends BaseController {
 
