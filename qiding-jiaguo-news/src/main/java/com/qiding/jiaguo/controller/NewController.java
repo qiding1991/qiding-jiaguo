@@ -26,7 +26,7 @@ public class NewController extends BaseController {
 
     @GetMapping("new/info")
     public CommonResponse<NewPageDetail> hotNew(@RequestParam(value = "size") Integer size,
-                                                @RequestParam(value = "newId",required = false) Long newId,
+                                                @RequestParam(value = "newType",required = false) Long newType,
                                                 @RequestParam(value = "offset") Integer offset) {
         NewPageDetail pageDetail = new NewPageDetail();
 
